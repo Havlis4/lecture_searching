@@ -34,6 +34,27 @@ def linear_search(sequence, target):
             count += 1
     return {"positions": positions, "count": count}
 
+def pattern_search(sequence, pattern):
+    positions = set()
+    pattern_length = len(pattern)
+    sequence_length = len(sequence)
+    i = 0
+
+    while i <= sequence_length - pattern_length:
+        j = 0
+        while j < pattern_length and sequence[i+j] == pattern[j]:
+            j += 1
+            if j == pattern_length:
+                positions.add(i)
+                i += pattern_length
+            elif j == 0:
+                i += 1
+            else:
+                i += j
+                
+    return positions
+
+
 
 def main():
     #pass
