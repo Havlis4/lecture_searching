@@ -18,7 +18,7 @@ def read_data(file_name, field):
 
     if field not in allowed_key:
         return None
-
+  
     with open(file_name,"r") as f:
         data = json.load(f)
 
