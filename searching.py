@@ -18,11 +18,22 @@ def read_data(file_name, field):
 
     if field not in allowed_key:
         return None
-  
+
     with open(file_name,"r") as f:
         data = json.load(f)
 
     return data.get(field)
+
+def linear_search(sequence, target):
+    positions = []
+    count = 0
+
+    for i, num in enumerate(sequence):
+        if num == target:
+            positions.append(i+1)
+            count += 1
+    return {"positions": positions, "count": count}
+
 
 def main():
     #pass
